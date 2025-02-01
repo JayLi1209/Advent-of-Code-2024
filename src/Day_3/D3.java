@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class D3 {
+    // TODO: this is nasty code. How to clean up?
     public static void main(String[] args) throws FileNotFoundException {
         File file = new File("src/Day_3/input.txt");
         Scanner scanner1 = new Scanner(file);
