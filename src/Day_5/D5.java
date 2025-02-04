@@ -49,13 +49,41 @@ public class D5 {
         System.out.println("Q1: " + result);
     }
 
+    // This is kinda cheating. It only finds the entry that has a specific number of matches.
+    // We made assumption that every incorrect entry has to have a way to be correct.
     private static void question2(Map<Integer, List<Integer>> map, List<int[]> queries){
         int result = 0;
 
         for(int[] query : queries){
-            // use dfs
+            int i = 1;
+            for(; i < query.length; ++i){
+                List<Integer> lst = map.get(query[i-1]);
+                if(lst == null || !lst.contains(query[i])) break;
+            }
+            if(i != query.length){
+                result += helper(map, query);
+            }
         }
 
         System.out.println("Q2: " + result);
+    }
+
+    private static int helper(Map<Integer, List<Integer>> map, int[] query){
+        int numCount = query.length/2;
+        for(int i = 0; i < query.length; ++i){
+            int tmpCount = 0;
+            List<Integer> lst = map.get(query[i]);
+            if(lst == null) continue;
+            for(int j = 0; j < query.length; ++j){
+                if(i == j) continue;
+                if(lst.contains(query[j])){
+                    ++tmpCount;
+                }
+            }
+            if(tmpCount == numCount){
+                return query[i];
+            }
+        }
+        return 0;
     }
 }
