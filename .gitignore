@@ -3,3 +3,10 @@
 
 # Ignore build/output directories
 out/
+
+*.dmp
+*.phd
+*.trc
+*.iml
+
+.DS_Store

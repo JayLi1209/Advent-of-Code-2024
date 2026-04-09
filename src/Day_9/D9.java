@@ -6,7 +6,14 @@ import java.util.*;
 
 public class D9 {
     public static void main(String[] args) throws FileNotFoundException {
-        Scanner scanner = new Scanner(new File("src/Day_9/input.txt"));
+        // test3 shohuld give 169 with:
+        /*
+        0...1...2......33333
+        0...1...233333......
+        02..1....33333......
+        021......33333......
+         */
+        Scanner scanner = new Scanner(new File("src/Day_9/test.txt"));
         String line = scanner.nextLine();
 
         int n = line.length(), cur = 0;
@@ -56,6 +63,9 @@ public class D9 {
         }
         System.out.println("Q1: " + sum);
     }
+
+    // 1. what do we count if it is more than 9?
+    // 2. what do we do if don't have enough free space?
     private static void question2(List<String> s){
         int sum = 0;
 
