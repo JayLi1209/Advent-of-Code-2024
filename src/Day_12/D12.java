@@ -48,6 +48,9 @@ public class D12 {
         System.out.println("Q1: " + result);
     }
 
+    // Question 2: trace where the direction is coming from.
+    // If same, -2
+
     private static int countArea(int[][] used, int num){
         int count = 0;
         for(int i = 0; i < used.length; ++i){
